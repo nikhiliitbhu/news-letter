@@ -38,11 +38,11 @@ app.post("/signup", function(req, res){
     let jsonData = JSON.stringify(data);
     
     const listID = 'd9c627ce06';
-    const url = `https://${apiKey}.api.mailchimp.com/3.0/lists/${listID}/members`
+    const url = `https://${server}.api.mailchimp.com/3.0/lists/${listID}/members`
     
     const options = {
         method: "post",
-        auth: `nikhil:${server}`
+        auth: `nikhil:${apiKey}`
     }
     
     const call = https.request(url, options, function(response){
