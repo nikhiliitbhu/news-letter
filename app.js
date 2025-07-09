@@ -61,8 +61,3 @@ app.post("/signup", function(req, res){
     call.end();
     // res.send(JSON.stringify(req.body));
 })
-
-
-//MailChimp
-//API key: 663a3a6b4e0322af6a33ddb1b37db47a-us9
-//List ID: d9c627ce06
