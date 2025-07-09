@@ -18,3 +18,12 @@ html, body {
       .title{
         text-align: center;
       }
+
+ @media only screen and (max-width: 600px) {
+ .form-signup {
+        min-width: 80%;
+        max-width: 90%;
+        padding: 2rem;
+        margin: auto;
+      }
+}
