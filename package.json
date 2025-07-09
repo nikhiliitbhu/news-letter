@@ -10,7 +10,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "body-parser": "^2.2.0",
-    "express": "^5.1.0"
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "install": "^0.13.0",
+    "npm": "^11.4.2"
   }
 }

@@ -3,6 +3,15 @@ const bodyParser = require('body-parser');
 const https = require('https');
 const app = express();
 
+require('dotenv').config();
+const mailchimp = require('@mailchimp/mailchimp_marketing');
+
+mailchimp.setConfig({
+  apiKey: process.env.MAILCHIMP_API_KEY,
+  server: process.env.MAILCHIMP_SERVER
+});
+
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
@@ -28,14 +37,12 @@ app.post("/signup", function(req, res){
 
     let jsonData = JSON.stringify(data);
     
-    const serverPrefix = 'us9';
     const listID = 'd9c627ce06';
-    const apiKey = "663a3a6b4e0322af6a33ddb1b37db47a";
-    const url = `https://${serverPrefix}.api.mailchimp.com/3.0/lists/${listID}/members`
+    const url = `https://${apiKey}.api.mailchimp.com/3.0/lists/${listID}/members`
     
     const options = {
         method: "post",
-        auth: `nikhil:${apiKey}`
+        auth: `nikhil:${server}`
     }
     
     const call = https.request(url, options, function(response){
@@ -59,5 +66,5 @@ app.post("/signup", function(req, res){
 
     call.write(jsonData);
     call.end();
-    // res.send(JSON.stringify(req.body));
+
 })
