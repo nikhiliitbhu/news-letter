@@ -1,0 +1,20 @@
+html, body {
+        height: 100%;
+      }
+      .form-signup {
+        min-width: 30%;
+        max-width: 40%;
+        padding: 2rem;
+        margin: auto;
+      }
+      .form-signup .form-floating:focus-within {
+        z-index: 2;
+      }
+      .form-signup input {
+        margin-bottom: -1px;
+        /* border-radius: 10px; */
+      }
+      
+      .title{
+        text-align: center;
+      }
